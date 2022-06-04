@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+CALV | Register
+{% endblock%}
+
+
+{% block content %}
+<h1 class="about-header">Register</h1>
+<form  class="form-background" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="form-button">Register</button>
+</form>
+
+
+
+
+
+{% endblock %}

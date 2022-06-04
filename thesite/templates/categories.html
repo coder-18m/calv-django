@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}CALV | Category{% endblock %}
+
+{% block content %}
+
+{% if request.user.is_superuser %}
+
+  <a href="{% url 'add_post' %}">add post</a>
+  <a href="{% url 'add_category' %}">add category</a>
+
+
+{% endif %}
+
+{% if category_posts %}
+
+<h1>{{ cats }} Category</h1>
+
+{% for post in category_posts %}
+<ol>
+
+
+  <li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> - {{ post.author.first_name }} {{ post.author.last_name }} - {{ post.post_date }}
+
+    {% if request.user.is_superuser %}
+    <a href="{% url 'update_post' post.pk %}">Edit</a>
+    {% endif %}
+
+    {% if request.user.is_superuser %}
+    <a href="{% url 'delete_post' post.pk %}">Delete</a></li>
+    {% endif %}
+
+</ol>
+  {{ post.body|linebreaksbr }}
+{% endfor %}
+
+{% else %}
+    <h2>Sorry, page does not exist.</h2>
+{% endif %}
+
+{% endblock %}

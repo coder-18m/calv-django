@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+CALV | Login
+{% endblock%}
+
+
+{% block content %}
+<h1 class="about-header">Login</h1>
+<!--<h2>login to view CALV posts!</h2>-->
+<form  class="form-background" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="form-button">Login</button>
+</form>
+
+
+
+
+
+{% endblock %}

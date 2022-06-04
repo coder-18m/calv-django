@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+CALV | {{ post.title }}
+{% endblock%}
+
+
+  {% block content %}
+  <h1 class="about-header">{{ post.title}}</h1>
+  <div class="art-con">
+      <h1>
+  <div class="posts-wrapper-2">
+  <h1>Author: {{ post.author.first_name }} {{ post.author.last_name }} -<!-- <a href="{% url 'category' post.category|slugify %}">{{post.category}}</a>-->
+    {{ post.post_date }}</h1>
+
+    {% if request.user.is_superuser %}
+    <div class="ed-del">
+
+    <a class="posts-edit" href="{% url 'update_post' post.pk %}">Edit</a>
+    {% endif %}
+
+    {% if request.user.is_superuser %}
+    <a class="posts-delete" href="{% url 'delete_post' post.pk %}">Delete</a>
+    </div>
+    {% endif %}
+</div>
+<br>
+      <hr>
+      <br>
+  <img width="100%" src="{{ post.header_image.url }}">
+  <br>
+  <br>
+  {{ post.body|safe|linebreaksbr }}
+  <br><br>
+  <a href="{% url 'home' %}"> <i class="fa-solid fa-arrow-left"></i> Back</a>
+  </h1>
+</div>
+
+
+
+
+
+{% endblock %}
