@@ -6,12 +6,20 @@ CALV | Login
 
 
 {% block content %}
-<h1 class="about-header">Login</h1>
+<style>
+  body{
+
+  }
+</style>
+
 <!--<h2>login to view CALV posts!</h2>-->
-<form  class="form-background" method="POST">
+<form  class="form-login" method="POST">
+  <h1 class="about-header">Login</h1>
+    <img class="login-img" src="{% static 'Img/group-chat.png' %}" alt="">
     {% csrf_token %}
     {{form.as_p}}
-    <button class="form-button">Login</button>
+    <p class="small-p">No Account? <a class="small-p" href="{% url 'register' %}">Register!</a></p>
+    <button class="button-54" role="button">Login</button>
 </form>
 
 

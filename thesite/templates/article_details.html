@@ -27,7 +27,9 @@ CALV | {{ post.title }}
 <br>
       <hr>
       <br>
+  {% if post.header_image %}
   <img width="100%" src="{{ post.header_image.url }}">
+  {% endif %}
   <br>
   <br>
   {{ post.body|safe|linebreaksbr }}
