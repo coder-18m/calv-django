@@ -6,15 +6,18 @@ CALV | Add Post
 
 
 {% block content %}
+
 {% if request.user.is_superuser %}
+<a class="back-btn" href="{% url 'home' %}"> <i class="fa-solid fa-arrow-left"></i> Back</a>
 <h1 class="about-header">Add Post</h1>
-<form  class="form-background" method="POST" enctype="multipart/form-data">
+<form  class="addpost-form" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.media }}
     {{form.as_p }}
-    <button class="form-button">Post</button>
+    <button class="button-54">Post</button>
 </form>
-
+<br>
+<br>
 {% else %}
 User access denied: not authenticated.
 {% endif %}

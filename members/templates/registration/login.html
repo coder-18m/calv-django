@@ -18,7 +18,7 @@ CALV | Login
     <img class="login-img" src="{% static 'Img/group-chat.png' %}" alt="">
     {% csrf_token %}
     {{form.as_p}}
-    <p class="small-p">No Account? <a class="small-p" href="{% url 'register' %}">Register!</a></p>
+    <p class="small-p">No Account? <a class="small-p" href="#">Register!</a></p>
     <button class="button-54" role="button">Login</button>
 </form>
 

@@ -32,6 +32,11 @@ body{
   font-size: 20px;
   margin-left: 20px;
 }
+.sorry-h1{
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+}
 
 .item-1 a{
   border-right: 1px solid gray;
@@ -379,6 +384,11 @@ nav ul ul ul li{
   justify-content: space-around;
   align-items: center;
 }
+.back-btn{
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  margin: 20px;
+}
 
 /* category sort drop down on posts page*/
 .container-sortby{
@@ -541,6 +551,13 @@ nav ul ul ul li{
     margin: 0 auto;
 
 }
+.form-login ul li{
+  font-family: 'Barlow Condensed', sans-serif;
+}
+.form-login ul{
+  margin-bottom: 10px;
+  list-style-type: none;
+}
 .form-login label{
 
   font-size: 16px;
@@ -597,7 +614,70 @@ nav ul ul ul li{
   top: 5px;
   left: 5px;
 }
+/* add category */
 
+.form-category{
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.14) , 0px 1px 10px 0px rgba(0,0,0,0.12) , 0px 2px 4px -1px rgba(0,0,0,0.2);
+  border-radius: 37px 37px 37px 37px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #ccb5aa;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+}
+.form-category label{
+  margin-right: 10px;
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.form-category input{
+  border-radius: 40px 40px 40px 40px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 20px;
+  padding: 7px;
+}
+/* add post form style */
+.addpost-form{
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.14) , 0px 1px 10px 0px rgba(0,0,0,0.12) , 0px 2px 4px -1px rgba(0,0,0,0.2);
+  border-radius: 37px 37px 37px 37px;
+  padding: 30px;
+  background: #ccb5aa;
+  width: 90%;
+  margin: auto;
+}
+.addpost-form label{
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.addpost-form input{
+  border-radius: 37px 37px 37px 37px;
+}
+.addpost-form p input{
+  font-family: 'Ubuntu', sans-serif;
+}
+.addpost-form textarea{
+  border-radius: 20px 20px 20px 20px;
+}
+/* like button */
+.fa-heart-circle-check{
+  color: #F44336;
+  font-size: 30px;
+}
+.fa-heart{
+  font-size: 30px;
+}
+.like-btn{
+  background: transparent;
+  border: none;
+}
+
+.fa-heart:hover{
+  color: #F44336;
+}
+.like-container{
+  margin-right: 20px;
+}
 
 @media (min-width: 768px) {
   .button-54 {
@@ -707,8 +787,10 @@ nav ul ul ul li{
 
   }
 }
-@media all and (max-width: 850px){
-
+@media (max-width: 800px){
+  .form-category{
+    width: 80%;
+  }
 }
 @media all and (max-width: 800px){
   .box-h1{
@@ -718,6 +800,26 @@ nav ul ul ul li{
 #donate-btn{
   padding: 5px;
   border: 1.5px solid black;
+}
+@media (max-width: 500px) {
+  .art-con h1{
+    font-size: 16px;
+  }
+  .posts-edit{
+    font-size: 16px;
+  }
+  .posts-delete{
+    font-size: 20px;
+  }
+  .likes-h1{
+    font-size: 12px;
+  }
+  .fa-heart{
+    font-size: 20px;
+  }
+  .fa-heart-circle-check{
+    font-size: 20px;
+  }
 }
 .brah{
   font-size: 16px;
@@ -729,6 +831,7 @@ nav ul ul ul li{
   }
 
 }
+
 #contact-id{
   color: blue;
 }

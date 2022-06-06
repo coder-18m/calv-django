@@ -10,19 +10,40 @@ CALV | {{ post.title }}
   <div class="art-con">
       <h1>
   <div class="posts-wrapper-2">
-  <h1>Author: {{ post.author.first_name }} {{ post.author.last_name }} -<!-- <a href="{% url 'category' post.category|slugify %}">{{post.category}}</a>-->
+  <h1>Author: {{ post.author.first_name }} {{ post.author.last_name }} -
+    <a href="{% url 'category' post.category|slugify %}">{{post.category}}</a> -
     {{ post.post_date }}</h1>
 
-    {% if request.user.is_superuser %}
-    <div class="ed-del">
 
+
+
+
+    <div class="ed-del">
+      <div class="like-container">
+          {% if user.is_authenticated %}
+          <form class="" action="{% url 'like_post' post.pk %}" method="POST">
+            {% csrf_token %}
+
+            {% if liked %}
+            <button class="like-btn" type="submit", name="post_id", value="{{ post.id }}"><i class="fa-solid fa-heart-circle-check"></i></button> <h1 class="likes-h1"> {{ total_likes }} Likes</h1>
+            {% else %}
+            <button class="like-btn" type="submit", name="post_id", value="{{ post.id }}"><i class="fa-solid fa-heart"></i></button> <h1 class="likes-h1"> {{ total_likes }} Likes</h1>
+            {% endif %}
+          </form>
+          {% else %}
+            <button class="like-btn"type="button" onclick="window.location.href='{% url 'login' %}';"><i class="fa-solid fa-heart"></i></button> <h1 class="likes-h1"> {{ total_likes }} Likes</h1>
+          {% endif %}
+      </div>
+
+    {% if request.user.is_superuser %}
     <a class="posts-edit" href="{% url 'update_post' post.pk %}">Edit</a>
     {% endif %}
 
     {% if request.user.is_superuser %}
     <a class="posts-delete" href="{% url 'delete_post' post.pk %}">Delete</a>
-    </div>
     {% endif %}
+    </div>
+
 </div>
 <br>
       <hr>
@@ -37,6 +58,10 @@ CALV | {{ post.title }}
   <a href="{% url 'home' %}"> <i class="fa-solid fa-arrow-left"></i> Back</a>
   </h1>
 </div>
+
+<br>
+<hr>
+<br>
 
 
 
