@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'thesite',
     'members',
     'ckeditor',
+    'django-test-without-migrations',
 ]
 
 MIDDLEWARE = [
