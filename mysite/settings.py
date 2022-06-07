@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 import django_on_heroku
+import dj_database_url
 
 from pathlib import Path
 
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-%c7_c1z!l@0#4m_r*uxyo@*_y+ar04$nsjpvd+91#patu2je7g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['contactcalvsite.herokuapp.com', 'contactcalv.org']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -126,8 +127,8 @@ STATIC_URL = 'static/'
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-STATIICFILES_DIR = (
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
